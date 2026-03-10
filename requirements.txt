@@ -1,0 +1,19 @@
+# Web framework
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+python-multipart==0.0.9
+
+# Database
+SQLAlchemy==2.0.35
+mysql-connector-python==9.0.0
+
+# Configuration & validation
+python-dotenv==1.0.1
+pydantic==2.9.0
+pydantic-settings==2.5.0
+
+# Logging
+loguru==0.7.2
+
+# Hardware (Raspberry Pi only - comment out on dev machine)
+# RPi.GPIO==0.7.1

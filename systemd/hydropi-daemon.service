@@ -1,0 +1,18 @@
+[Unit]
+Description=HydroPi Sensor and Relay Daemon
+After=network.target mariadb.service
+Requires=mariadb.service
+
+[Service]
+Type=exec
+User=pi
+Group=pi
+# pi user must be in gpio group: sudo usermod -a -G gpio pi
+WorkingDirectory=/home/pi/hydropi
+EnvironmentFile=/home/pi/hydropi/.env
+ExecStart=/home/pi/hydropi/venv/bin/python -m services.hydropi_main
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=HydroPi Dynamic DNS Updater
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=pi
+WorkingDirectory=/home/pi/hydropi
+EnvironmentFile=/home/pi/hydropi/.env
+ExecStart=/home/pi/hydropi/venv/bin/python scripts/update_dns.py
